@@ -6,7 +6,10 @@ export const SingleUser = createSlice({
   name: "singleUser",
   initialState,
   reducers: {
-    singleData: (state, action) => {},
+    singleData: (state, action) => {
+      state = action.payload;
+      return state;
+    },
   },
 });
 

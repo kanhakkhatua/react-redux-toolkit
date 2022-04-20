@@ -13,9 +13,18 @@ export const CrudSlice = createSlice({
       state = copyArr;
       //   console.log(state);
     },
+    updateEditData: (state, action) => {
+      state = action.payload;
+      return state;
+    },
+    deleteData: (state, action) => {
+      let arr = state;
+      arr.splice(action.payload, 1);
+      state = arr;
+    },
   },
 });
 
-export const { allData } = CrudSlice.actions;
+export const { allData, updateEditData, deleteData } = CrudSlice.actions;
 
 export default CrudSlice.reducer;
